@@ -6,13 +6,21 @@ A Tool that provides specific functionality
 
 A set of tools and guidelines for building apps
 
+>## `Check node version`
+`node -v`
+
+>## `Create React app`
+
+
+`npm create vite@latest` or ` npx create-react-app project name`
+
+
+
+
 >## `Difference Between Props & State`
 Input passed to a component similar to function args immutable
 
 Data managed by a component similar to local variables
 
->## `Create React app`
-
-`npm create vite@latest`
 
 
