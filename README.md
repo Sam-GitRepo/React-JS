@@ -1,5 +1,5 @@
 ># `React`
-React is a library
+React is a library of JS that used to create website. It allows us to easily create single page Apps- SPA's for short
 
 >## `Difference Between Library & Framework`
 A Tool that provides specific functionality
