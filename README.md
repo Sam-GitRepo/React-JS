@@ -11,4 +11,8 @@ Input passed to a component similar to function args immutable
 
 Data managed by a component similar to local variables
 
+>## `Create React app`
+
+`npm create vite@latest`
+
 
