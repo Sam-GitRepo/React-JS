@@ -1,26 +1,161 @@
 ># `React`
-React is a library of JS that used to create website. It allows us to easily create single page Apps- SPA's for short
+React is a library of JS that used to create website . It allows us to easily create single page Apps- SPA's for short
 
->## `Difference Between Library & Framework`
-A Tool that provides specific functionality
+>### `Features of React`
+* Quick, responsive apps
+* Uses virtual dom
+* Does server side rendering
+* One way data binding / Single-Way data 􀁼ow
+* Open source
 
-A set of tools and guidelines for building apps
+>### `SPA (Single page Application)`
+* You load the app code JUST once
+* The JavaScript framework (like React, AngularJS) intercepts the    browser events
+   * Instead of making a new request to the server that then returns a new document
+   * Behaves more like a desktop application
+* You don't need to refresh the page for updates
+    * Your framework handles reload internally
 
->## `Check node version`
-`node -v`
+>### `Difference Between Library & Framework`
+* A Tool that provides specific functionality
 
->## `Create React app`
+* A set of tools and guidelines for building apps
+---
+---
+>## `Installation`
+
+>### `Node.js`
+Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser.
+
+* Node.js and NPM or Yarn
+* NPM amd Yarn are package manager for Javascript.
+   * Allows us to easily install Javascript libraries
+
+* Download Node here - https://nodejs.org/en/
 
 
-`npm create vite@latest` or ` npx create-react-app project name`
+
+>### `Check node version`
+```
+node -v
+```
+
+>### `React Intallation`
+
+```
+npm create vite@latest
+```
+or
+```
+  npx create-react-app  project name
+```  
+
+---
+---
+
+>## `React JSX`
+JSX is an XML/HTML-like syntax used by React that extends ECMAScript so that XML/HTML-like text can co-exist with JavaScript/React code. The syntax is intended to be used by preprocessor (i.e., transpilers like Babel) to transform HTML-like text found in JavaScript files into standard JavaScript objects that a JavaScript engine will parse.
+
+#### JSX-RULES
+
+* Always return single element
+* div / section / artical or Fragment
+* Use camel case for html attributes
+  * class -> className
+* close every element
+   * </>
+* use parenthesis at return so that formatting is not an issue.
+
+#### Using JSX
+```jsx
+var nav = (
+  <ul id="nav">
+    <li>
+      <a href="#">Home</a>
+    </li>
+    <li>
+      <a href="#">About</a>
+    </li>
+    <li>
+      <a href="#">Clients</a>
+    </li>
+    <li>
+      <a href="#">Contact Us</a>
+    </li>
+  </ul>
+);
+```
+#### Without JSX
+```jsx
+var nav = React.createElement(
+  "ul",
+  { id: "nav" },
+  React.createElement(
+    "li",
+    null,
+    React.createElement("a", { href: "#" }, "Home")
+  ),
+  React.createElement(
+    "li",
+    null,
+    React.createElement("a", { href: "#" }, "About")
+  ),
+  React.createElement(
+    "li",
+    null,
+    React.createElement("a", { href: "#" }, "Clients")
+  ),
+  React.createElement(
+    "li",
+    null,
+    React.createElement("a", { href: "#" }, "Contact Us")
+  )
+);
+```
+
+>### `Babel`
+Babel is javascript compiler.it converts ES6 into old java script code.
+In ES6 we may not use semicolon ;
+
+>### `Folder Structure`
+![logo](https://github.com/A-jha/React-Complete/raw/master/tutorial/Images/React-complete.png)
+
+---
+---
+>## `Components`
+* It is a building block that describes what to render
+* To create component
+  * Create local variable with Uppercase letter
+  * React uses this to distinguish between components and HTML
+* It is the heart and soul of react
+* Every component must implements "render" method
+* Every component has state obj and prop obj
+
+```jsx
+// Create a component named FirstComponent
+class FirstComponent extends React.Component {
+render() {
+return <h2>Hi, I am first react component!</h2>;
+}
+}
+```
 
 
 
 
->## `Difference Between Props & State`
+
+
+
+
+
+
+
+
+
+<!-- >### `Difference Between Props & State`
 Input passed to a component similar to function args immutable
 
-Data managed by a component similar to local variables
+Data managed by a component similar to local variables -->
 
 
 
