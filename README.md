@@ -123,20 +123,53 @@ In ES6 we may not use semicolon ;
 ---
 ---
 >## `Components`
-* It is a building block that describes what to render
-* To create component
-  * Create local variable with Uppercase letter
-  * React uses this to distinguish between components and HTML
-* It is the heart and soul of react
-* Every component must implements "render" method
-* Every component has state obj and prop obj
+Components are independent and reusable bits of code. They serve the same purpose as JavaScript functions, but work in isolation and return HTML.
+
+Components come in two types, Class components and Function components
 
 ```jsx
-// Create a component named FirstComponent
-class FirstComponent extends React.Component {
-render() {
-return <h2>Hi, I am first react component!</h2>;
+//Create a Class component called Car
+class Car extends React.Component {
+  render() {
+    return <h2>Hi, I am a Car!</h2>;
+  }
 }
+```
+
+
+```jsx
+// Create a function component named App
+function App() {
+  return (
+    <div className="App">
+      <div className="content">
+        <h1>App Component</h1>
+      </div>
+    </div>
+  );
+}
+```
+* we can assign numbers, strings, etc to variables and output them within curly braces in template, it is called dynamic value.
+
+```jsx
+function App() {
+    const greetings = 'hello world';
+    const num = 20;
+    const link = 'https://.google.com.tw';
+  return (
+    <div className="App">
+      <div className="content">
+            <h1>App Component</h1>
+            <p>{greeting}</p>
+            <div>{num}</div>
+            <a href={ link }>about</a>
+
+            //we can also output data directly inside curly braces
+            <p>{'This is Sam'}</p>
+            <p>{ [1, 2, 3, 4, 5] }</p>
+      </div>
+    </div>
+  );
 }
 ```
 
@@ -150,12 +183,6 @@ return <h2>Hi, I am first react component!</h2>;
 
 
 
-
-
-<!-- >### `Difference Between Props & State`
-Input passed to a component similar to function args immutable
-
-Data managed by a component similar to local variables -->
 
 
 
