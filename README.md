@@ -149,7 +149,7 @@ function App() {
   );
 }
 ```
-* we can assign numbers, strings, etc to variables and output them within curly braces in template, it is called dynamic value.
+* **we can assign numbers, strings, etc to variables and output them within curly braces in template, it is called dynamic value.**
 
 ```jsx
 function App() {
