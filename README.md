@@ -56,7 +56,7 @@ or
 >## `React JSX`
 JSX is an XML/HTML-like syntax used by React that extends ECMAScript so that XML/HTML-like text can co-exist with JavaScript/React code. The syntax is intended to be used by preprocessor (i.e., transpilers like Babel) to transform HTML-like text found in JavaScript files into standard JavaScript objects that a JavaScript engine will parse.
 
-#### JSX-RULES
+### JSX-RULES
 
 * Always return single element
 * div / section / artical or Fragment
@@ -66,7 +66,7 @@ JSX is an XML/HTML-like syntax used by React that extends ECMAScript so that XML
    * </>
 * use parenthesis at return so that formatting is not an issue.
 
-#### Using JSX
+### Using JSX
 ```jsx
 var nav = (
   <ul id="nav">
@@ -85,7 +85,7 @@ var nav = (
   </ul>
 );
 ```
-#### Without JSX
+### Without JSX
 ```jsx
 var nav = React.createElement(
   "ul",
@@ -113,11 +113,11 @@ var nav = React.createElement(
 );
 ```
 
->### `Babel`
+>## `Babel`
 Babel is javascript compiler.it converts ES6 into old java script code.
 In ES6 we may not use semicolon ;
 
->### `Folder Structure`
+>## `Folder Structure`
 ![logo](https://github.com/A-jha/React-Complete/raw/master/tutorial/Images/React-complete.png)
 
 ---
@@ -296,14 +296,93 @@ const Home = () => {
       <button onClick={handleClick}>Click me</button>
     </div>
   );
-}
- 
+} 
+
 export default Home;
 ```
 
+>## ` Outputting Lists`
+In React, you will render lists with some type of loop.
+The JavaScript map() array method is generally the preferred method.
 
+* ### keys
+Keys allow React to keep track of elements. This way, if an item is updated or removed, only that item will be re-rendered instead of the entire list.
+```jsx
+import { useState } from 'react'
 
+const Home = () => {
+    const [blogs, setBlogs] = useState([
+        { title: 'My new website', body: 'lorem ipsum...', author: 'Sam', id: 1 },
+        { title: 'Welcome party!', body: 'lorem ipsum...', author: 'Sharma', id: 2 },
+        { title: 'Web dev top tips', body: 'lorem ipsum...', author: 'Jha', id: 3 }
+    ]);
 
+    return (
+        <div className="home">
+            {blogs.map((blog)=>(
+                <div className="blog-preview" key={blogs.id}>
+                    <h2>{blog.title}</h2>
+                    <p>Written by {blog.author}</p>
+                </div>
+            ))}
+        </div>
+    );
+}
+```
+
+>## `Props`
+* Props are arguments passed into React components.
+* Props are passed to components via HTML attributes.
+
+```jsx
+const Home = () => {
+    const [blogs, setBlogs] = useState([
+        { title: 'My new website', body: 'lorem ipsum...', author: 'Sam', id: 1 },
+        { title: 'Welcome party!', body: 'lorem ipsum...', author: 'Sharma', id: 2 },
+        { title: 'Web dev top tips', body: 'lorem ipsum...', author: 'Jha', id: 3 }
+    ]);
+
+    return (
+        <div className="home">
+            <BlogList blogs={blogs} title="All Blogs!" />
+        </div>
+    );
+}
+```
+* one way using probs
+```jsx
+const BlogList = (props) => {
+    const blogs = props.blogs;
+    const title = props.title;
+    return (
+        <div className="blog-list">
+            <h2>{title}</h2>
+            {blogs.map((blog) => (
+                <div className="blog-preview" key={blogs.id}>
+                    <h2>{blog.title}</h2>
+                    <p>Written by {blog.author}</p>
+                </div>
+            ))}
+        </div>
+    );
+}
+```
+* Another & popular way of using props
+```jsx
+const BlogList = ({blogs, title}) => {
+    return (
+        <div className="blog-list">
+            <h2>{title}</h2>
+            {blogs.map((blog) => (
+                <div className="blog-preview" key={blogs.id}>
+                    <h2>{blog.title}</h2>
+                    <p>Written by {blog.author}</p>
+                </div>
+            ))}
+        </div>
+    );
+}
+```
 
 
 
