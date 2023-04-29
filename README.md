@@ -335,6 +335,20 @@ function Timer() {
 ```
 useEffect runs on every render. That means that when the count changes, a render happens, which then triggers another effect.
 
+* ### useEffect dependencies
+The list of all reactive values referenced inside of the setup code. Reactive values include props, state, and all the variables and functions declared directly inside your component body.
+```jsx
+const [name, setName] = useState('Sam')
+
+useEffect(() => {
+    console.log('use effect ran');
+    console.log(name);
+},[name]);
+
+ <button onClick={() => setName('Hritik')}>Change Name</button>
+ <p>{name}</p>
+```
+
 ---
 ---
 
