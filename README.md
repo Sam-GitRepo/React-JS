@@ -209,7 +209,7 @@ function Greeting() {
 ---
 ---
 
->### `Adding Styles`
+>## `Adding Styles`
 There are many ways to style React with CSS
 * Inline styling
 * CSS stylesheets
@@ -225,7 +225,7 @@ const Header = () => {
   );
 }
 ```
->### `Clicking Events`
+>## `Clicking Events`
 * React events are written in camelCase syntax
 * React event handlers are written inside curly braces
   
@@ -253,17 +253,17 @@ const Home = () => {
 }
 ```
 
->### `useState Hook`
+>## `useState Hook`
 The React useState Hook allows us to track state in a function component.
 State generally refers to data or properties that need to be tracking in an application.
 
-* #### Import useState
+* ### Import useState
 To use the useState Hook, we first need to import it into our component.
 ```jsx
 import { useState } from "react";
 ```
 
-* #### Initialize useState
+* ### Initialize useState
 **useState** accepts an initial state and returns two values:
  * The current state.
  * A function that updates the state.
