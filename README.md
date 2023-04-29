@@ -173,7 +173,133 @@ function App() {
 }
 ```
 
+>### `Nested components`
+Nested components in React.js help you create more complex view element structures.
 
+* A react fuctional component returns a paragraph.
+```jsx
+//explicit return
+const About = () => {
+  return <p>Welcome to react tutorail</p>;
+};
+```
+* A react component using above component inside it.
+  
+```jsx
+// implicit return
+const Person = () => (
+  <h2>
+    Hello
+    <About />
+  </h2>
+);
+```
+* This is the main component which is going to render.
+
+```jsx
+function Greeting() {
+  return (
+    <div>
+      <Person />
+      <About />
+    </div>
+  );
+}
+```
+---
+---
+
+>### `Adding Styles`
+There are many ways to style React with CSS
+* Inline styling
+* CSS stylesheets
+* CSS Modules
+
+```jsx
+const Header = () => {
+  return (
+    <>
+      <h1 style={{color: "red"}}>Hello Style!</h1>
+      <p>Add a little style!</p>
+    </>
+  );
+}
+```
+>### `Clicking Events`
+* React events are written in camelCase syntax
+* React event handlers are written inside curly braces
+  
+```jsx
+<button onClick={shoot}>Take the Shot!</button>
+```
+```jsx
+const Home = () => {
+
+  const handleClick = (e) => {
+    console.log('hello ninjas', e);
+  }
+
+  const handleClickAgain = (name, e) => {
+    console.log('hello ' + name, e.target);
+  }
+
+  return (
+    <div className="home">
+      <h2>Homepage</h2>
+      <button onClick={handleClick}>Click me</button>
+      <button onClick={(e) => handleClickAgain('mario', e)}>Click me again</button>
+    </div>
+  );
+}
+```
+
+>### `useState Hook`
+The React useState Hook allows us to track state in a function component.
+State generally refers to data or properties that need to be tracking in an application.
+
+* #### Import useState
+To use the useState Hook, we first need to import it into our component.
+```jsx
+import { useState } from "react";
+```
+
+* #### Initialize useState
+**useState** accepts an initial state and returns two values:
+ * The current state.
+ * A function that updates the state.
+```jsx
+import { useState } from "react";
+
+function FavoriteColor() {
+  const [color, setColor] = useState("");
+}
+```
+
+```jsx
+import { useState } from "react";
+
+const Home = () => {
+  // let name = 'mario';
+  const [name, setName] = useState('Hritik');
+  const [age, setAge] = useState(24);
+
+  const handleClick = () => {
+    // name = 'Sam';
+    setName('Sam');
+    setAge(30);
+  }
+
+  return (
+    <div className="home">
+      <h2>Homepage</h2>
+      <p>{ name } is { age } years old</p>
+      <button onClick={handleClick}>Click me</button>
+    </div>
+  );
+}
+ 
+export default Home;
+```
 
 
 
