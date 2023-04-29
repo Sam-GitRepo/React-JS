@@ -206,6 +206,16 @@ function Greeting() {
   );
 }
 ```
+
+>### `Reusable component`
+A Reusable component is a piece of User Interface that can be used in many parts of an application to build and render different User Interface instances.
+```jsx
+ <div className="home">
+      <BlogList blogs={blogs} title="All Blogs!" />
+      <BlogList blogs={blogs.filter((blog) => blog.author === 'Sam')} title="Sam Blogs!" />
+  </div>
+```
+
 ---
 ---
 
@@ -252,6 +262,8 @@ const Home = () => {
   );
 }
 ```
+---
+---
 
 >## `useState Hook`
 The React useState Hook allows us to track state in a function component.
@@ -279,7 +291,7 @@ function FavoriteColor() {
 import { useState } from "react";
 
 const Home = () => {
-  // let name = 'mario';
+  // let name = 'Hritik';
   const [name, setName] = useState('Hritik');
   const [age, setAge] = useState(24);
 
@@ -300,6 +312,31 @@ const Home = () => {
 
 export default Home;
 ```
+>## `useEffect Hooks`
+The useEffect Hook allows you to perform side effects in your components.
+* useEffect run after every render.
+* useEffect accepts two arguments, The second argument is optional.
+
+```jsx
+import { useState, useEffect } from "react";
+import ReactDOM from "react-dom/client";
+
+function Timer() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setCount((count) => count + 1);
+    }, 1000);
+  });
+
+  return <h1>I've rendered {count} times!</h1>;
+}
+```
+useEffect runs on every render. That means that when the count changes, a render happens, which then triggers another effect.
+
+---
+---
 
 >## ` Outputting Lists`
 In React, you will render lists with some type of loop.
@@ -381,6 +418,33 @@ const BlogList = ({blogs, title}) => {
             ))}
         </div>
     );
+}
+```
+>### ` Functions as Props`
+* Define the function in the parent component.
+* Pass it as a prop to the child component.
+* Use the function in the child component.
+```jsx
+import {useState} from 'react';
+
+function Child({handleClick}) {
+  return <button onClick={handleClick}>Increment</button>;
+}
+
+export default function App() {
+  const [count, setCount] = useState(0);
+
+  function handleClick() {
+    console.log('Function ran in Child component');
+    setCount(count + 1);
+  }
+
+  return (
+    <div>
+      <h2>Count is: {count}</h2>
+      <Child handleClick={handleClick} />
+    </div>
+  );
 }
 ```
 
