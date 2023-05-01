@@ -461,9 +461,59 @@ export default function App() {
   );
 }
 ```
+>## `JSON`
+Install JSON Server
+```jsx
+npm install -g json-server
+```
+Start JSON Server
+```jsx
+json-server --watch to-do\data\db.json --port 8000
+```
 
+```json
+/blogs          GET       Fetch all blogs
+/blogs/{id}     GET       Fetch a single blog
+/blogs          POST      Add a new blog
+/blogs/{id}     DELETE    Delete a blog
 
+```
+* ### Fetch Data from API with useEffect
+* Import useState and useEffect
+* Create our dogImage variable as well as the setDogImage function via useState
+* Create out useEffect function — this is where we'll perform our fetch
+* Within our useEffect function we'll use setDogImage to.. well... set dogImage to the image url that we received
+* Use dogImage as the src for our image so that we can display the random dog
 
+```jsx
+// 1. Import *useState* and *useEffect*
+import React, {useState, useEffect} from 'react';
+import './App.css';
+
+function App() {
+    // 2. Create our *dogImage* variable as well as the *setDogImage* function via useState
+    // We're setting the default value of dogImage to null, so that while we wait for the
+    // fetch to complete, we dont attempt to render the image
+  let [dogImage, setDogImage] = useState(null)
+
+    // 3. Create out useEffect function
+  useEffect(() => {
+    fetch("https://dog.ceo/api/breeds/image/random")
+    .then(response => response.json())
+        // 4. Setting *dogImage* to the image url that we received from the response above
+    .then(data => setDogImage(data.message))
+  },[])
+
+  return (
+    <div className="App">
+        {/* 5. Using *dogImage as* the *src* for our image*/}
+    {dogImage && <img src={dogImage}></img>}
+    </div>
+  );
+}
+
+export default App;
+```
 
 
 
