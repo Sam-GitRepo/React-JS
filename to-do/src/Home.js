@@ -2,13 +2,13 @@ import { useState, useEffect } from 'react';
 import BlogList from './BlogList'
 
 const Home = () => {
-    const [blogs, setBlogs] = useState([
-        { title: 'My new website', body: 'lorem ipsum...', author: 'Sam', id: 1 },
-        { title: 'Welcome party!', body: 'lorem ipsum...', author: 'Sharma', id: 2 },
-        { title: 'Web dev top tips', body: 'lorem ipsum...', author: 'Jha', id: 3 }
-    ]);
+    const [blogs, setBlogs] = useState(null);
+    // [
+    //     { title: 'My new website', body: 'lorem ipsum...', author: 'Sam', id: 1 },
+    //     { title: 'Welcome party!', body: 'lorem ipsum...', author: 'Sharma', id: 2 },
+    //     { title: 'Web dev top tips', body: 'lorem ipsum...', author: 'Jha', id: 3 }
+    // ]
 
-    const [name, setName] = useState('Sam')
 
 
     const handleDelete = (id) => {
@@ -17,15 +17,12 @@ const Home = () => {
     }
 
     useEffect(() => {
-        console.log('use effect ran');
-        console.log(name);
-    },[name])
+       fetch()
+    }, [])
 
     return (
         <div className="home">
             <BlogList blogs={blogs} title="All Blogs!" handleDelete={handleDelete} />
-            <button onClick={() => setName('Hritik')}>Change Name</button>
-            <p>{name}</p>
         </div>
     );
 }
