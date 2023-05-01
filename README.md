@@ -479,11 +479,11 @@ json-server --watch to-do\data\db.json --port 8000
 
 ```
 * ### Fetch Data from API with useEffect
-* Import useState and useEffect
-* Create our dogImage variable as well as the setDogImage function via useState
-* Create out useEffect function — this is where we'll perform our fetch
-* Within our useEffect function we'll use setDogImage to.. well... set dogImage to the image url that we received
-* Use dogImage as the src for our image so that we can display the random dog
+  * Import useState and useEffect
+  * Create our dogImage variable as well as the setDogImage function via useState
+  * Create out useEffect function — this is where we'll perform our fetch
+  * Within our useEffect function we'll use setDogImage to.. well... set dogImage to the image url that we received
+  * Use dogImage as the src for our image so that we can display the random dog
 
 ```jsx
 // 1. Import *useState* and *useEffect*
@@ -514,6 +514,7 @@ function App() {
 
 export default App;
 ```
+>## `Conditional Rendering`
 
 
 
