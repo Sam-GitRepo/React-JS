@@ -123,9 +123,11 @@ In ES6 we may not use semicolon ;
 ---
 ---
 >## `Components`
-Components are independent and reusable bits of code. They serve the same purpose as JavaScript functions, but work in isolation and return HTML.
+A Component is one of the core building blocks of React. In other words, we can say that every application you will develop in React will be made up of pieces called components. Components make the task of building UIs much easier. You can see a UI broken down into multiple individual pieces called components and work on them independently and merge them all in a parent component which will be your final UI
 
 Components come in two types, Class components and Function components
+
+* The class components are a little more complex than the functional components. The functional components are not aware of the other components in your program whereas the class components can work with each other. 
 
 ```jsx
 //Create a Class component called Car
@@ -135,7 +137,7 @@ class Car extends React.Component {
   }
 }
 ```
-
+* Functional components are simply javascript functions. We can create a functional component in React by writing a javascript function. These functions may or may not receive data as parameters,
 
 ```jsx
 // Create a function component named App
@@ -266,7 +268,8 @@ const Home = () => {
 ---
 
 >## `useState Hook`
-The React useState Hook allows us to track state in a function component.
+useState() hook allows one to declare a state variable inside a function. It should be noted that one use of useState() can only be used to declare one state variable. 
+
 State generally refers to data or properties that need to be tracking in an application.
 
 * ### Import useState
@@ -382,6 +385,8 @@ const Home = () => {
 ```
 
 >## `Props`
+React allows us to pass information to a Component using something called props (which stands for properties). Props are objects which can be used inside a component
+
 * Props are arguments passed into React components.
 * Props are passed to components via HTML attributes.
 
@@ -599,7 +604,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Home />);
 ```
 >## `React Routers`
-hey it me
+React Router is a standard library for routing in React. It enables the navigation among views of various components in a React Application, allows changing the browser URL, and keeps the UI in sync with the URL.
 
 
 
