@@ -606,6 +606,96 @@ root.render(<Home />);
 >## `React Routers`
 React Router is a standard library for routing in React. It enables the navigation among views of various components in a React Application, allows changing the browser URL, and keeps the UI in sync with the URL.
 
+```jsx
+import { BrowserRouter, Route } from 'react-router-dom';
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Route exact path="/" component={HomePage} />
+      <Route path="/about" component={AboutPage} />
+      <Route path="/contact" component={ContactPage} />
+    </BrowserRouter>
+  );
+}
+```
+
+>### `Exact Match Routes`
+In React Router, the exact prop is used to ensure that a route will match only if the current URL is an exact match. 
+```jsx
+import { BrowserRouter, Route } from 'react-router-dom';
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Route exact path="/" component={HomePage} />
+      <Route path="/about" component={AboutPage} />
+      <Route path="/contact" component={ContactPage} />
+    </BrowserRouter>
+  );
+}
+```
+ >### `Router Links`
+ In React Router, < Link > components are used to create links to different routes in your application. They are similar to anchor tags (< a >) in HTML, but instead of causing a full page reload when clicked, they navigate to a different route in the application using client-side routing.
+```jsx
+import { Link } from 'react-router-dom';
+
+function NavigationMenu() {
+  return (
+    <nav>
+      <ul>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/about">About</Link></li>
+        <li><Link to="/contact">Contact</Link></li>
+      </ul>
+    </nav>
+  );
+}
+```
+>### `Route parameters`
+In React Router, route parameters are used to extract dynamic data from the URL path of a route. For example, you might have a route that displays details about a specific item, and the item's ID is included in the URL path.
+
+To define a route with parameters, you can use a colon (:) followed by the parameter name in the path prop of a Route component.
+```jsx
+import { useParams } from 'react-router-dom';
+
+function ItemDetails() {
+  const { id } = useParams();
+
+  return (
+    <div>
+      <h1>Item Details</h1>
+      <p>ID: {id}</p>
+      {/* Other item details here */}
+    </div>
+  );
+}
+```
+>## `useEffect Cleanup`
+In React, the useEffect hook is used to perform side effects in function components. These side effects can include fetching data from a server, subscribing to events, or updating the document title, among other things.
+```jsx
+import { useEffect } from 'react';
+
+function MyComponent() {
+  useEffect(() => {
+    // Do something here
+    return () => {
+      // Clean up after the effect here
+    };
+  }, []);
+
+  // Rest of component code here
+}
+```
+
+
+
+
+
+
+
+
+
 
 
 
